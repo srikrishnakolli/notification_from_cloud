@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "682406191202",
+    "project_id": "cloudmessage-e53aa",
+    "storage_bucket": "cloudmessage-e53aa.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:682406191202:android:459e5e37f610de4a1ab13b",
+        "android_client_info": {
+          "package_name": "com.example.ca14_cloud_message"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsxBM253JzfSbyyS70UsK8e3eeD73dP8A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
