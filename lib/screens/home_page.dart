@@ -14,6 +14,7 @@ class _MyHomePageState extends State<MyHomePage> {
   late FirebaseMessaging messaging;
   String? notificationText = "📭 No notifications received yet.";
   List<String> notificationHistory = [];
+  List<bool> readStatus = [];
 
   @override
   void initState() {
@@ -31,6 +32,7 @@ class _MyHomePageState extends State<MyHomePage> {
       setState(() {
         notificationText = message.notification?.body ?? "No message body";
         notificationHistory.add(notificationText!);
+        readStatus.add(false);
       });
       _showNotificationDialog(message);
     });
@@ -39,6 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
       setState(() {
         notificationText = message.notification?.body ?? "No message body";
         notificationHistory.add(notificationText!);
+        readStatus.add(false);
       });
       _showNotificationDialog(message);
     });
@@ -105,7 +108,17 @@ class _MyHomePageState extends State<MyHomePage> {
           Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => NotificationHistoryPage(history: notificationHistory),
+              builder: (context) => NotificationHistoryPage(
+                history: notificationHistory,
+                readStatus: readStatus,
+                onMarkAllRead: () {
+                  setState(() {
+                    for (int i = 0; i < readStatus.length; i++) {
+                      readStatus[i] = true;
+                    }
+                  });
+                },
+              ),
             ),
           );
         },
